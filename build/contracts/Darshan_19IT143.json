@@ -9688,12 +9688,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xF3e53D6395472218C1D2B99c7Ec6d9cAac583281",
-      "transactionHash": "0x0b491b86ea48d0c07693e8c76e875e43b7948768514af21d4e63dd104602996d"
+      "address": "0xcC6b21Fb4ab85899bC10de356F161D55A1FcB343",
+      "transactionHash": "0xed6e49f6cec31bd5ca9d2d007cd8a2c397784808b9b4ba6c26e17c7d7a2d873a"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-19T14:21:42.369Z",
+  "updatedAt": "2022-08-31T04:59:09.732Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
