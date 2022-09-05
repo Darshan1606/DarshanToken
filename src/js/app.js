@@ -27,17 +27,17 @@ App = {
   
     initContracts: function() {
       $.getJSON("TokenSale.json", function(tokenSale) {
-        App.contracts.TokenSale = TruffleContract(tokenSale);
-        App.contracts.TokenSale.setProvider(App.web3Provider);
-        App.contracts.TokenSale.deployed().then(function(tokenSale) {
+        App.contracts.Darshan_TokenSale = TruffleContract(tokenSale);
+        App.contracts.Darshan_TokenSale.setProvider(App.web3Provider);
+        App.contracts.Darshan_TokenSale.deployed().then(function(tokenSale) {
           console.log("TokenSale Token Sale Address:", tokenSale.address);
         });
       }).done(function() {
-        $.getJSON("TokenSale.json", function(tokenSale) {
-          App.contracts.TokenSale = TruffleContract(tokenSale);
-          App.contracts.TokenSale.setProvider(App.web3Provider);
-          App.contracts.TokenSale.deployed().then(function(tokenSale) {
-            console.log("TokenSale Token Sale Address:", tokenSale.address);
+        $.getJSON("Darshan_19IT143.json", function(darshan19IT143) {
+          App.contracts.Darshan_19IT143 = TruffleContract(darshan19IT143);
+          App.contracts.Darshan_19IT143.setProvider(App.web3Provider);
+          App.contracts.Darshan_19IT143.deployed().then(function(darshan19IT143) {
+            console.log("darshan19IT143 Token Sale Address:", darshan19IT143.address);
          
             App.listenForEvents();
             return App.render();
@@ -50,7 +50,7 @@ App = {
   
     // Listen for events emitted from the contract
     listenForEvents: function() {
-      App.contracts.Manan19IT103TokenSale.deployed().then(function(instance) {
+      App.contracts.TokenSale.deployed().then(function(instance) {
         instance.Sell({}, {
           fromBlock: 0,
           toBlock: 'latest',
@@ -62,6 +62,7 @@ App = {
     },
   
     render: function() {
+
       if (App.loading) {
         return;
       }
@@ -72,6 +73,7 @@ App = {
   
       loader.show();
       content.hide();
+     
     
   
   // Load account data
@@ -85,6 +87,8 @@ App = {
         App.account = web3.eth.accounts[0];
         $('#accountAddress').html("Your Account: " +  App.account);
     }
+
+    
   
   
       // Load token sale contract
@@ -106,7 +110,7 @@ App = {
   
         // Load token contract
         App.contracts.Darshan_19IT143.deployed().then(function(instance) {
-          const darshan19IT143Instance = instance;
+           const darshan19IT143Instance = instance;
           return darshan19IT143Instance.balanceOf(App.account);
         }).then(function(balance) {
           $('.d143-balance').html(balance.toNumber());
