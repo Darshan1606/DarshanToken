@@ -50,7 +50,7 @@ App = {
   
     // Listen for events emitted from the contract
     listenForEvents: function() {
-      App.contracts.TokenSale.deployed().then(function(instance) {
+      App.contracts.Darshan_TokenSale.deployed().then(function(instance) {
         instance.Sell({}, {
           fromBlock: 0,
           toBlock: 'latest',
@@ -92,7 +92,7 @@ App = {
   
   
       // Load token sale contract
-      App.contracts.TokenSale.deployed().then(function(instance) {
+      App.contracts.Darshan_TokenSale.deployed().then(function(instance) {
         tokenSaleInstance = instance;
         return tokenSaleInstance.tokenPrice();
       }).then(function(tokenPrice) {
@@ -125,7 +125,7 @@ App = {
       $('#content').hide();
       $('#loader').show();
       const numberOfTokens = $('#numberOfTokens').val();
-      App.contracts.TokenSale.deployed().then(function(instance) {
+      App.contracts.Darshan_TokenSale.deployed().then(function(instance) {
         return instance.buyTokens(numberOfTokens, {
           from: App.account,
           value: numberOfTokens * App.tokenPrice,

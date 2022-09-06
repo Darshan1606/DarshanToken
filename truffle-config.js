@@ -22,6 +22,9 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const fs = require("fs");
+const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -40,12 +43,17 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
-    rinkeby: {
-      host: "localhost",     
-      port: 8545,            
-      network_id: 4,
-      gas: 4700000       
-    }
+    matic: {
+      provider: () =>
+        new HDWalletProvider(
+          mnemonic,
+          `https://polygon-mumbai.g.alchemy.com/v2/REAbSCnNPwz6kcPL1-ffF9xyeXZVkiKZ`
+        ),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+    },
     //
     // An additional network, but with some advanced options…
     // advanced: {

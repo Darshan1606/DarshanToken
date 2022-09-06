@@ -9690,10 +9690,16 @@
       "links": {},
       "address": "0x391E30343F0cEE357f1D2022f9bdf6dFc26dCDc3",
       "transactionHash": "0x771e05751913936389632d8c5848d4d43d88cb1444c6bb3e5e2ba4671371d9e8"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x0A75170822704292c57c1D05Ae82fdb3208EDe3a",
+      "transactionHash": "0x9b4dddd0f31795a12889805aee54db673aeee2ee7cdb27ba86b7939cbfe2909f"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-03T09:26:37.605Z",
+  "updatedAt": "2022-09-06T09:54:58.999Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
